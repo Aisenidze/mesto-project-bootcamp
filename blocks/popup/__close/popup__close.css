@@ -14,4 +14,18 @@
     color: #FFFFFF;
 
     cursor: pointer;
+
+    transition: all .4s ease-in-out;  
+}
+
+.popup__close:hover {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 560px) {
+    .popup__close {
+        width: 20px;
+        height: 20px;
+        right: 0px;
+    }
 }

@@ -17,4 +17,20 @@
     line-height: 22px;
 
     text-align: center;
+
+    transition: all .4s ease-in-out;  
+}
+
+.popup__save:hover {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 560px) {
+.popup__save {
+    max-width: 238px;
+    min-height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0 auto;
+}
 }
