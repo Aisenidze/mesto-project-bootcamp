@@ -1,0 +1,5 @@
+.popup__zoom-container {
+    position: relative;
+    background: none;
+    max-width: none;
+}
