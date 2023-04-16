@@ -1,0 +1,9 @@
+.card__item-description {
+    padding: 22px 20px 22px 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+}

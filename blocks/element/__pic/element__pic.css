@@ -1,8 +1,0 @@
-.element__pic {
-    border-radius: 10px 10px 0 0;
-    display: block;
-    height: 282px;
-    -o-object-fit: cover;
-    object-fit: cover;
-    width: 100%;
-}
