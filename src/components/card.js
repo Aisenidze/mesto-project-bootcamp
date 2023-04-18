@@ -12,6 +12,7 @@ import {
   renderLoading,
 } from "./index.js";
 import { postNewCard, removeApiCard, addLike, handleError, deleteLike } from "./api.js";
+import { validationData } from "./validate.js";
 
 export function createCards(newCard) {
   const clonElement = cardTemplate.querySelector(".card__item").cloneNode(true);
@@ -66,8 +67,7 @@ export function addNewCards(e) {
   })
   .catch(() => {
     handleError();
-    e.submitter.classList.add(validationData.disabledBtnClass);
-    button.setAttrubute('disabled', '');
+    button.setAttrbute('disabled', '');
   })
   .finally(() => {
     renderLoading(false, button);

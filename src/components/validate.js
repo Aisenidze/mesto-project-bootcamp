@@ -16,9 +16,9 @@ function hideInputError(inputElement, formElement, formData) {
   ///Функция, которая проверяет валидность поля
 function isValid(inputElement, formElement, formData) {
   if (inputElement.validity.valid) {
-    inputElement.onblur = () =>{
+    inputElement.addEventListener('blur', () => {
       inputElement.setAttribute('data-used', 'true');
-    }
+    })
     hideInputError(inputElement, formElement, formData);
     return;
   }
@@ -60,9 +60,9 @@ export function enableValidation(formData) {
   formList.forEach((form) => {
     form.addEventListener('submit', (e) => {
       e.preventDefault()
-      resetErrors(form, formData);
     });
-  setFormValidityHandler(form, formData);
+    resetErrors(form, formData);
+    setFormValidityHandler(form, formData);
   });
 }
 
@@ -84,4 +84,13 @@ export function toggleButtonState(formElement, button, formData) {
     button.classList.remove(formData.inactiveButtonClass);
     button.removeAttribute('disabled', '');
   }
+};
+
+export const validationData = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_inactive',
+  inputErrorClass: 'popup__input_invalid',
+  errorClass: 'popup__input-error-message_active'
 };

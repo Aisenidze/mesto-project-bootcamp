@@ -6,8 +6,8 @@ export function openModal(popup) {
   popup.classList.add('popup_opened');
 };
 
-export async function closeModal(popup) {
+export function closeModal(popup) {
   document.removeEventListener('keydown', handleEscape);
-  await popup.removeEventListener('mousedown', handleOverlay);
-  await popup.classList.remove('popup_opened');
+  popup.removeEventListener('mousedown', handleOverlay);
+  popup.classList.remove('popup_opened');
 };

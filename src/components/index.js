@@ -2,8 +2,7 @@ import '../pages/index.css';
 
 import { openModal, closeModal } from "./utils.js";
 import { prependCard, addNewCards } from "./card.js";
-import { enableValidation, resetErrors, toggleButtonState } from "./validate.js"
-import { validationData } from "./modal.js"
+import { enableValidation, resetErrors, toggleButtonState, validationData } from "./validate.js"
 import { getInitialCards, updateProfileData, getProfileData, updateProfileAvatar, handleError } from './api.js';
 
 export const cardSection = document.querySelector(".card__items");
@@ -121,8 +120,7 @@ export function renderLoading(isLoading, button) {
     button.setAttribute("disabled", "");
     return;
   }
-  button.textContent = "Сохранить"; 
-  button.classList.add(validationData.disabledBtnClass);
+  button.textContent = "Сохранить";
   button.removeAttribute("disabled", "");
 }
 
