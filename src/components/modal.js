@@ -7,11 +7,10 @@ export function handleEscape(e) {
   };
 };
 
-export function handleOutside(e) {
-  const addModal = document.querySelector('.popup_opened');
+export function handleOverlay(e) {
   if(!e.target.closest('.popup__form-container')) {
-    closeModal(addModal);
-  };
+    closeModal(e.target);
+  }
 };
 
 export const validationData = {
