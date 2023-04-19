@@ -16,9 +16,9 @@ function hideInputError(inputElement, formElement, formData) {
   ///Функция, которая проверяет валидность поля
 function isValid(inputElement, formElement, formData) {
   if (inputElement.validity.valid) {
-    inputElement.addEventListener('blur', () => {
+    inputElement.onblur = () => {
       inputElement.setAttribute('data-used', 'true');
-    })
+    }
     hideInputError(inputElement, formElement, formData);
     return;
   }

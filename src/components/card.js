@@ -9,10 +9,10 @@ import {
   title,
   link,
   userId,
-  renderLoading,
 } from "./index.js";
 import { postNewCard, removeApiCard, addLike, handleError, deleteLike } from "./api.js";
 import { validationData } from "./validate.js";
+import { renderLoading } from "./utils.js";
 
 export function createCards(newCard) {
   const clonElement = cardTemplate.querySelector(".card__item").cloneNode(true);
@@ -67,7 +67,6 @@ export function addNewCards(e) {
   })
   .catch(() => {
     handleError();
-    button.setAttrbute('disabled', '');
   })
   .finally(() => {
     renderLoading(false, button);

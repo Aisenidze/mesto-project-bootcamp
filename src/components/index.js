@@ -1,6 +1,6 @@
 import '../pages/index.css';
 
-import { openModal, closeModal } from "./utils.js";
+import { openModal, closeModal, renderLoading } from "./utils.js";
 import { prependCard, addNewCards } from "./card.js";
 import { enableValidation, resetErrors, toggleButtonState, validationData } from "./validate.js"
 import { getInitialCards, updateProfileData, getProfileData, updateProfileAvatar, handleError } from './api.js';
@@ -113,16 +113,6 @@ Promise.all([getInitialCards(), getProfileData()])
   cardList.forEach(prependCard);
 })
 .catch(handleError);
-
-export function renderLoading(isLoading, button) {
-  if (isLoading) {
-    button.textContent = "Сохранение...";
-    button.setAttribute("disabled", "");
-    return;
-  }
-  button.textContent = "Сохранить";
-  button.removeAttribute("disabled", "");
-}
 
 btnClosePopups.forEach((element) => {
   element.addEventListener('click', () => {

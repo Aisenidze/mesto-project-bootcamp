@@ -11,3 +11,13 @@ export function closeModal(popup) {
   popup.removeEventListener('mousedown', handleOverlay);
   popup.classList.remove('popup_opened');
 };
+
+export function renderLoading(isLoading, button) {
+  if (isLoading) {
+    button.textContent = "Сохранение...";
+    button.setAttribute("disabled", "");
+    return;
+  }
+  button.textContent = "Сохранить";
+  button.removeAttribute("disabled", "");
+}
